@@ -50,6 +50,7 @@ services:
 
   kibana:
     image: docker.elastic.co/kibana/kibana:5.3.2
+    container_name: kibana
     volumes:
       - ./kibana/config/:/usr/share/kibana/config
     ports:

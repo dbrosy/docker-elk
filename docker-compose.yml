@@ -63,6 +63,7 @@ services:
     depends_on:
       - elasticsearch1
       - elasticsearch2
+      
 volumes:
   esdata1:
     driver: local

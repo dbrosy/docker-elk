@@ -48,6 +48,17 @@ services:
     networks:
       - esnet
 
+  kibana:
+    build: docker.elastic.co/kibana/kibana:5.3.2
+    volumes2
+      - ./kibana/config/:/usr/share/kibana/config
+    ports:
+      - "5601:5601"
+    networks:
+      - esnet
+    depends_on:
+      - elasticsearch1
+      - elasticsearch2
 volumes:
   esdata1:
     driver: local

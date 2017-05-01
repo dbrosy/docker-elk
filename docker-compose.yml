@@ -1,9 +1,7 @@
 version: '2'
 services:
   elasticsearch1:
-    image: docker.elastic.co/elasticsearch/elasticsearch:5.3.2
-#    volumes:
-#      - ./elasticsearch/config/elasticsearch.yml:/usr/share/elasticsearch/config/elasticsearch.yml    
+    image: docker.elastic.co/elasticsearch/elasticsearch:5.3.2    
     container_name: elasticsearch1
     environment:
       - cluster.name=docker-cluster
@@ -21,6 +19,7 @@ services:
       - IPC_LOCK
     volumes:
       - esdata1:/usr/share/elasticsearch/data
+      - ./elasticsearch/config/elasticsearch.yml:/usr/share/elasticsearch/config/elasticsearch.yml      
     ports:
       - 9200:9200
     networks:
@@ -45,6 +44,7 @@ services:
       - IPC_LOCK
     volumes:
       - esdata2:/usr/share/elasticsearch/data
+      - ./elasticsearch/config/elasticsearch.yml:/usr/share/elasticsearch/config/elasticsearch.yml      
     networks:
       - esnet
 

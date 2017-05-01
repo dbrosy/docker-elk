@@ -7,7 +7,7 @@ nginx - kibana - elasticsearch - logstash
 git clone https://github.com/dbrosy/docker-elk.git
 ```
 
-## Update```
+## Update
 ```
 cd /docker-elk
 git pull --rebase
